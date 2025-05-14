@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo Vue</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <a v-bind:href="url">Visitando o site do VueJS</a>
+    </div>
+    <div id="app2">
+        <input type="text" v-model="message" placeholder="Digite uma mensagem">
+        <p>Ola, {{ message }}!</p>
+    </div>
+    <div id="app3">
+        <p v-if="seen">Agora você vê</p>
+        <p v-else>Agora você não vê</p>
+    </div>
+    <div id="app4">
+        <h1 v-if="status">{{ titulo }}</h1>
+        <h1 v-else="status">Não existe titulo!</h1>
+        <h2 v-show="status">{{ titulo }}</h2>
+    </div>
+    <div id="app5">
+        <div v-if="usuario.id == 1">
+            ID: {{usuario.id}}, <br>
+            Nome: {{usuario.nome}}, <br>
+            Email: {{usuario.email}}, <br>
+            profissao: {{usuario.profissao}}
+        </div>
+        <div v-else>
+            Não existe usuário com o ID: 1
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
