@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Vue JS - Diretivas v-bind atribuindo valor às tags html</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>{{ titulo }}</h1>
+        <img 
+        v-bind:src="'https://br.vuejs.org/images/logo.svg'"
+        v-bind:alt="'Vuejs is awesome!'"
+        v-bind:data-img-large="'https://br.vuejs.org/images/logo.svg'" v-bind:alt="'Vuejs is awesome!'">
+    </div>
+</body>
+</html>
