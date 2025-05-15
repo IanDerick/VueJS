@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="app">
+    <!--<div id="app">
         <a v-bind:href="url">Visitando o site do VueJS</a>
     </div>
     <div id="app2">
@@ -25,14 +25,53 @@
     </div>
     <div id="app5">
         <div v-if="usuario.id == 1">
-            ID: {{usuario.id}}, <br>
-            Nome: {{usuario.nome}}, <br>
-            Email: {{usuario.email}}, <br>
-            profissao: {{usuario.profissao}}
+            ID: {{ usuario.id }}, <br>
+            Nome: {{ usuario.nome }}, <br>
+            email: {{ usuario.email }}, <br>
+            profissao: {{ usuario.profissao }}
         </div>
         <div v-else>
             Não existe usuário com o ID: 1
         </div>
+    </div>
+    <div id="app6">
+        <ul id="example-1">
+            <li v-for="item in items" :key="item.id">
+                {{ item.text}}
+            </li>
+        </ul>
+    </div>
+    <div id="app7">
+        <h1>{{ titulo }}</h1>
+        <ul>
+            <li v-for="item in linguagens">{{ item }}</li><br>
+            <li v-for="item in linguagens">{{ item.nome }}</li><br>
+            <li v-for="item in linguagens">{{ item.nome }}{{ " - "}}{{item.stauts}}</li><br>
+            <li v-for="(item, index) in linguagens">{{ index + " - " }}{{item}}</li><br>
+            <li v-for="(item, index) in linguagens">{{ index + " - " }}{{item.nome}}</li>
+        </ul>
+    </div>-->
+    <div id="app">
+        <h1>{{ titulo }}</h1>
+        <div v-if="autenticado">
+            <h2>Bem-vindo, {{ usuario.nome}}!</h2>
+            <button @click="logout">Sair</button>
+        </div>
+        <div v-else>
+            <h2>Faça login</h2>
+            <form @submit.prevent="login">
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" v-model="username" required><br><br>
+
+                <label for="password">Senha:</label>
+                <input type="password" id="password" v-model="password" required>
+                <div class="botoes">
+                    <button type="reset" @click="resetForm">Redefinir</button>
+                    <button type="submit">Entrar</button>
+                </div>
+            </form>
+        </div>
+        <p v-show="erro" style="color: red;">Nome do usuário ou senha incorretos.</p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="script.js"></script>
