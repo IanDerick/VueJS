@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.Js Example</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{ message }}</p>
+        <p>{{ reversedMessage }}</p>
+        <input v-model="message" />
+    </div>
+    <br><br>
+
+    <div id="app2">
+        <p>Mensagem atual: {{ message }}</p>
+        <input v-model="message" />
+        <p>Status: {{ status }}</p>
+    </div>
+
+    <div id="app3">
+        <p>{{ fullName }}</p>
+        <input v-model="firstName" placeholder="Primeiro nome">
+        <input v-model="lastName" placeholder="Ultimo nome">
+        <p>{{ apiResponse }}</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
