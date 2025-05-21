@@ -13,6 +13,14 @@
         <button-component text="CLIQUEI AQUI" @clicked="handleClick" color="yellow"></button-component>
     </div>
 
+    <template>
+        <div id="app2">
+            <button @click="currentComponent - 'component-a'">Componente A</button>
+            <button @click="currentComponent - 'component-b'">Componente B</button>
+            <component :is="currentComponent"></component>
+        </div>
+    </template>
+
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="script.js"></script>
 </body>
