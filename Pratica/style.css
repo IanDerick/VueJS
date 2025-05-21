@@ -23,3 +23,25 @@ button{
     background-color: red;
     color: white;
 }
+input{
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td{
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+th{
+    background-color: #e7e7e7;
+}
+th:hover{
+    background-color: #f1f1f1;
+}

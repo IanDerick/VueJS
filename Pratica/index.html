@@ -11,9 +11,9 @@
     <div id="app">
         <h1>Cadastro da Agenda</h1>
         <form @submit.prevent="editIndex === -1 ? addContact() : updateContact()">
-            <input type="text" v-model="newContact.nome" placeholder="Nome" required>
-            <input type="text" v-model="newContact.telefone" placeholder="Telefone" required>
-            <input type="email" v-model="newContact.email" placeholder="E-mail" required>
+            <input type="text" v-model="currentContact.nome" placeholder="Nome" required>
+            <input type="text" v-model="currentContact.telefone" placeholder="Telefone" required>
+            <input type="email" v-model="currentContact.email" placeholder="E-mail" required>
             <button type="submit">{{ editIndex === -1 ? 'Adicionar' : 'Atualizar'}}</button>
         </form>
 
