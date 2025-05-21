@@ -1,0 +1,25 @@
+body{
+    font-family: Ariel, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+h1{
+    color: #333;
+}
+button{
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #5cb85c;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.edit{
+    background-color: blue;
+    color: white;
+}
+.delete{
+    background-color: red;
+    color: white;
+}

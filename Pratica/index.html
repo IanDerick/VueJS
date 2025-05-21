@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda com Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Cadastro da Agenda</h1>
+        <form @submit.prevent="editIndex === -1 ? addContact() : updateContact()">
+            <input type="text" v-model="newContact.nome" placeholder="Nome" required>
+            <input type="text" v-model="newContact.telefone" placeholder="Telefone" required>
+            <input type="email" v-model="newContact.email" placeholder="E-mail" required>
+            <button type="submit">{{ editIndex === -1 ? 'Adicionar' : 'Atualizar'}}</button>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>E-mail</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(contact, index) in contacts" :key="index">
+                    <td>{{ contact.nome }}</td>
+                    <td>{{ contact.telefone }}</td>
+                    <td>{{ contact.email }}</td>
+                    <td>
+                        <button class="edit" @click="editContact(index)">Editar</button>
+                        <button class="delete" @click="deleteContact(index)">Deletar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
