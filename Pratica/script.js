@@ -7,12 +7,20 @@ new Vue({
             email: ''
         },
         contacts: [],                
-        editIndex: -1            
+        editIndex: -1,
+        messageVisible: false,
+        messageText: ''     
+    },
+    computed: {
+        contactsCount(){
+            return this.contacts.length;
+        }
     },
     methods: {
         addContact() {
             if (this.currentContact.nome && this.currentContact.telefone && this.currentContact.email) {
                 this.contacts.push({ ...this.currentContact });
+                this.showMessage('Contato adicionado com sucesso!');
                 this.resetForm();
             }
         },
@@ -22,14 +30,23 @@ new Vue({
         },
         updateContact() {
             this.$set(this.contacts, this.editIndex, this.currentContact);
+            this.showMessage('Contato atualizado com sucesso!');
             this.resetForm();
             this.editIndex = -1;
         },
         deleteContact(index) {
+            this.showMessage('Contato deletado!');
             this.contacts.splice(index, 1);
         },
         resetForm(){
             this.currentContact = { nome: '', telefone: '', email: ''}
+        },
+        showMessage(text){
+            this.messageText = text;
+            this.messageVisible = true;
+            setTimeout(()=> {
+                this.messageVisible = false
+            }, 4000);
         }
     }
 });

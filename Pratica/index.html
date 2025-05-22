@@ -17,6 +17,10 @@
             <button type="submit">{{ editIndex === -1 ? 'Adicionar' : 'Atualizar'}}</button>
         </form>
 
+        <div v-if="messageVisible" class="message">{{ messageText }}</div>
+
+
+        <div class="counter">Total de contatos: {{ contactsCount}} </div>
         <table>
             <thead>
                 <tr>

@@ -45,3 +45,18 @@ th{
 th:hover{
     background-color: #f1f1f1;
 }
+.message{
+    background-color: #dff0d8;
+    color: #3c763d;
+    padding: 10px;
+    margin: 20px 0;
+    text-align: center;
+    border: 1px solid #d6e9c6;
+    border-radius: 5px;
+}
+.counter{
+    text-align: center;
+    font-size: 18px;
+    margin: 20px 0;
+    font-weight: bold;
+}
